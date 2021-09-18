@@ -1,0 +1,9 @@
+<odoo>
+	<data>
+		<template id="custom_style" name="custom_style_template" inherit_id="web.assets_backend">
+			<xpath expr="." position="inside">
+				
+			</xpath>
+		</template>
+	</data>
+</odoo>
