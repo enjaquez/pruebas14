@@ -306,6 +306,19 @@
         </record>
 
 
+        <!-- Modificamos el list view de sale.order.line -->
+        <record model="ir.ui.view" id="res_sale_order_line_extend_view">
+            <field name="name">res.sale.order.line.extend.view</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="product_uom_category_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
         <!-- Modificamos el kanban de Contactos -->
         <record model="ir.ui.view" id="res_partner_kanban_extend_view">
             <field name="name">res.partner.kanban.extend.view</field>
