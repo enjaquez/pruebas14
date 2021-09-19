@@ -70,7 +70,13 @@ class CustomContactos(models.Model):
     cuarto           = fields.Many2one(comodel_name='contactos_extend.cuartos', string="Cuarto")
     especialidad     = fields.Many2one(comodel_name='contactos_extend.especialidades', string="Especialidad")
     medico           = fields.Many2one(comodel_name='contactos_extend.medicos', string="Medico")
-    
+    importe_medic    = fields.Float(string="Medicamentos", default=0.0)
+    importe_insum    = fields.Float(string="Insumos", default=0.0)
+    importe_servi    = fields.Float(string="Servicios", default=0.0)
+    importe          = fields.Float(string="Importe", default=0.0)
+    impuestos        = fields.Float(string="I.V.A", default=0.0)
+    total            = fields.Float(string="Total a pagar", default=0.0)
+
     def get_medicamentos(self):
     	self.ensure_one()
     	return {

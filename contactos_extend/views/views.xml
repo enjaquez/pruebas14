@@ -351,7 +351,14 @@
                     <field name="estadocivil"/>
                     <field name="ocupacion"/>
                 </xpath>
-
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='vat']" position="after">
+                    <field name="importe_medic"/>
+                    <field name="importe_insum"/>
+                    <field name="importe_servi"/>
+                    <field name="importe"/>
+                    <field name="impuestos"/>
+                    <field name="total"/>
+                </xpath>
                 <xpath expr="//form[1]/sheet[1]/notebook[1]/page[last()]" position="after">
                     <page name="admision" string="Datos de admision">
                         <group name="container_row_3">
@@ -368,7 +375,24 @@
                             </group>
                         </group>                        
                     </page>
+                </xpath>
 
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[last()]" position="after">
+                    <page name="importe" string="Datos de admision">
+                        <group name="container_row_3">
+                            <group string="" name="group_admision_1" priority="1">
+                                <field name="fecha_ingreso"/>
+                                <field name="cuarto"/>
+                                <field name="especialidad"/>
+                                <field name="medico"/>
+                                <field name="servicio"/>
+                                <field name="alergias"/>
+                            </group>
+                            <group name="group_admision_2" string="">
+                                <field name="motivo_consulta"/>
+                            </group>
+                        </group>                        
+                    </page>
                 </xpath>
 
             </field>
