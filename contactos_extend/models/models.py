@@ -73,7 +73,7 @@ class CustomContactos(models.Model):
     importe_medic    = fields.Float(string='Medicamentos', compute='_compute_importe_med')
     importe_insum    = fields.Float(string='Insumos', compute='_compute_importe_ins')
     importe_servi    = fields.Float(string='Servicios', default=0.0, readonly=True)
-    importe          = fields.Float(string='Importe', default=0.0, readonly=True)
+    importe          = fields.Float(string='Importe', compute='_compute_importe')
     impuestos        = fields.Float(string='I.V.A', default=0.0, readonly=True)
     total            = fields.Float(string='Total a pagar', default=0.0, readonly=True)
 
@@ -107,6 +107,20 @@ class CustomContactos(models.Model):
         for record in datas:
             importe_temp=importe_temp + record.price_subtotal        
         self.importe_insum = importe_temp
+
+    def _compute_importe(self):
+        importe_temp = 0
+        importe_temp2 = 0
+        importe_temp3 = 0
+        for rec in self:
+            datas=self.env['sale.order.line'].search([('order_partner_id','=',rec.id)])        
+        for record in datas:
+            importe_temp=importe_temp + record.price_subtotal
+            importe_temp2=importe_temp2 + record.price_tax
+            importe_temp3=importe_temp3 + record.price_total        
+        self.importe = importe_temp
+        self.impuestos = importe_temp2
+        self.total = importe_temp3
 
 class CustomSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
