@@ -94,8 +94,8 @@ class CustomContactos(models.Model):
 
     def _compute_importe_med(self):
         for rec in self:
-            rec.count_reg=self.env['sale.order.line'].search_count([('order_partner_id','=',rec.id)])
-            self.importe_medic = count_reg
+            importe_temp=self.env['sale.order.line'].search_count([('order_partner_id','=',rec.id)])
+        self.importe_medic = importe_temp
 
 class CustomSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
