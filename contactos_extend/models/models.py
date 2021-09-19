@@ -91,3 +91,13 @@ class CustomContactos(models.Model):
     def _calculo_registro(self):
     	for rec in self:
     		rec.count_reg=self.env['sale.order.line'].search_count([('order_partner_id','=',rec.id)])
+
+
+class CustomSaleOrderLine(models.Model):
+
+    _inherit = 'sale.order.line'
+
+    categoria = fields.Many2one("produc.template","product_id",string="Categoria")
+
+
+
