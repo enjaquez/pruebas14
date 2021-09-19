@@ -313,7 +313,7 @@
             <field name="inherit_id" ref="sale.view_order_line_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree/field[@name='name']" position="after">
-                    <field name="categoria"/>
+                    <field name="nombre_categoria"/>
                 </xpath>
             </field>
         </record>

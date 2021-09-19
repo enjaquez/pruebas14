@@ -95,7 +95,9 @@ class CustomContactos(models.Model):
 
 class CustomSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
-    categoria = fields.Many2one('product.category',related='product_tmpl_id.categ_id',string='Categoria')
+
+    categoria = fields.Many2one('product.template',string='Categoria')
+    nombre_categoria = fields.Char('Categoria',related='categoria.categ_id',readonly=True)
 
 
 
