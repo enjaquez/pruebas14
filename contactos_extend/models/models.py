@@ -96,7 +96,7 @@ class CustomContactos(models.Model):
 class CustomSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    nombre_categoria = fields.Char('Categoria',related='product_id.categ_id',readonly=True)
+    nombre_categoria = fields.Char('Categoria',related='product_id.categ_id.name',readonly=True)
 
 
 
