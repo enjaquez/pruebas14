@@ -71,11 +71,11 @@ class CustomContactos(models.Model):
     especialidad     = fields.Many2one(comodel_name='contactos_extend.especialidades', string="Especialidad")
     medico           = fields.Many2one(comodel_name='contactos_extend.medicos', string="Medico")
     importe_medic    = fields.Float(string='Medicamentos', compute='_compute_importe_med')
-    importe_insum    = fields.Float(string='Insumos', default=0.0)
-    importe_servi    = fields.Float(string='Servicios', default=0.0)
-    importe          = fields.Float(string='Importe', default=0.0)
-    impuestos        = fields.Float(string='I.V.A', default=0.0)
-    total            = fields.Float(string='Total a pagar', default=0.0)
+    importe_insum    = fields.Float(string='Insumos', compute='_compute_importe_ins')
+    importe_servi    = fields.Float(string='Servicios', default=0.0, readonly=True)
+    importe          = fields.Float(string='Importe', default=0.0, readonly=True)
+    impuestos        = fields.Float(string='I.V.A', default=0.0, readonly=True)
+    total            = fields.Float(string='Total a pagar', default=0.0, readonly=True)
 
     def get_medicamentos(self):
     	self.ensure_one()
@@ -95,12 +95,18 @@ class CustomContactos(models.Model):
     def _compute_importe_med(self):
         importe_temp = 0
         for rec in self:
-            datas=self.env['sale.order.line'].search([('order_partner_id','=',rec.id),('nombre_categoria','=','Medicamento')])
-        
+            datas=self.env['sale.order.line'].search([('order_partner_id','=',rec.id),('nombre_categoria','=','Medicamento')])        
         for record in datas:
-            importe_temp=importe_temp + record.price_subtotal
-        
+            importe_temp=importe_temp + record.price_subtotal        
         self.importe_medic = importe_temp
+
+    def _compute_importe_ins(self):
+        importe_temp = 0
+        for rec in self:
+            datas=self.env['sale.order.line'].search([('order_partner_id','=',rec.id),('nombre_categoria','=','Insumo')])        
+        for record in datas:
+            importe_temp=importe_temp + record.price_subtotal        
+        self.importe_insum = importe_temp
 
 class CustomSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
