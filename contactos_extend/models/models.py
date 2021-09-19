@@ -70,7 +70,7 @@ class CustomContactos(models.Model):
     cuarto           = fields.Many2one(comodel_name='contactos_extend.cuartos', string="Cuarto")
     especialidad     = fields.Many2one(comodel_name='contactos_extend.especialidades', string="Especialidad")
     medico           = fields.Many2one(comodel_name='contactos_extend.medicos', string="Medico")
-    importe_medic    = fields.Float(string='Medicamentos', default=0.0)
+    importe_medic    = fields.Float(string='Medicamentos', compute='_compute_importe_med')
     importe_insum    = fields.Float(string='Insumos', default=0.0)
     importe_servi    = fields.Float(string='Servicios', default=0.0)
     importe          = fields.Float(string='Importe', default=0.0)
@@ -92,11 +92,15 @@ class CustomContactos(models.Model):
     	for rec in self:
     		rec.count_reg=self.env['sale.order.line'].search_count([('order_partner_id','=',rec.id)])
 
+    def _compute_importe_med(self):
+        self.importe_medic = 1.0
 
 class CustomSaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     nombre_categoria = fields.Char('Categoria',related='product_id.categ_id.name',readonly=True)
+
+
 
 
 
