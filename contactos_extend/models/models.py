@@ -96,7 +96,10 @@ class CustomContactos(models.Model):
         importe_temp = 0
         for rec in self:
             datas=self.env['sale.order.line'].search([('order_partner_id','=',rec.id),('nombre_categoria','=','Medicamento')])
+        
+        for record in datas:
             importe_temp=importe_temp + datas.price_subtotal
+        
         self.importe_medic = importe_temp
 
 class CustomSaleOrderLine(models.Model):
