@@ -93,8 +93,10 @@ class CustomContactos(models.Model):
     		rec.count_reg=self.env['sale.order.line'].search_count([('order_partner_id','=',rec.id)])
 
     def _compute_importe_med(self):
+        importe_temp = 0
         for rec in self:
-            importe_temp=self.env['sale.order.line'].search_count([('order_partner_id','=',rec.id)])
+            datas=self.env['sale.order.line'].search([('order_partner_id','=',rec.id),('nombre_categoria','=','Medicamento')])
+            importe_temp=importe_temp + datas.price_subtotal
         self.importe_medic = importe_temp
 
 class CustomSaleOrderLine(models.Model):
