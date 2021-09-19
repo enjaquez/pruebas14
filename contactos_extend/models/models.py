@@ -94,10 +94,8 @@ class CustomContactos(models.Model):
 
 
 class CustomSaleOrderLine(models.Model):
-
     _inherit = 'sale.order.line'
-
-    categoria = fields.Many2one('product.category',string='Categoria')
+    categoria = fields.Char('product_id.categ_id',string='Categoria')
 
 
 
