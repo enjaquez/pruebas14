@@ -97,7 +97,7 @@ class CustomSaleOrderLine(models.Model):
 
     _inherit = 'sale.order.line'
 
-    categoria = fields.One2many('product.template','categ_id',string='Categoria')
+    categoria = fields.Many2one('product.category',string='Categoria')
 
 
 
