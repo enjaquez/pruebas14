@@ -3,7 +3,7 @@
 		<report
 			string="Reporte Detallado"
 			id="contactos_extend_detallado_report"
-			model="res.partner"
+			model="sale.order.line"
 			report_type="qweb-pdf"
 			name="contactos_extend.report_detallado_card"
 			file="contactos_extend.report_detallado_card"

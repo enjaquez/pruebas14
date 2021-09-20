@@ -151,8 +151,8 @@ class DetalladoReport(models.AbstractModel):
         report = report_obj._get_report_from_name('contactos_extend.report_detallado_card')
         return {
             'doc_ids'   : docids,
-            'doc_model' : self.env['res.partner'],
-            'docs'      : self.env['res.partner'].browse(docids)
+            'doc_model' : self.env['sale.order.line'],
+            'docs'      : self.env['sale.order.line'].browse(docids)
         }
 
 
