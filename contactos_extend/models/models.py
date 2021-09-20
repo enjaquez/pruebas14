@@ -128,6 +128,25 @@ class CustomSaleOrderLine(models.Model):
     nombre_categoria = fields.Char('Categoria',related='product_id.categ_id.name',readonly=True)
 
 
+class SimpleReport(models.AbstractModel):
+    _name='report.contactos_extend.report_simple_card'
 
+    @api.model
+    def _get_report_values(self, docids, data=None):
+        report_obj = self.env['ir.actions.report']
+        report = report_obj._get_report_from_name('contactos_extend.report_simple_card')
+        return {
+            'doc_ids' : docids,
+            'doc_model' : self.env['sale.order.line']
+            'docs' : self.env['sale.order.line'].browse(docids)
+        }
+
+
+
+
+
+
+
+        
 
 
