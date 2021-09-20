@@ -47,16 +47,16 @@
 							      <td>0.00</td>
 							    </tr>
 							    <tr>
-							      <td style="align:right;">Sub-Total</td>
-							      <td style="align:right;"><t t-esc="o.importe"/></td>
+							      <td class="align-right">Sub-Total</td>
+							      <td class="align-right"><t t-esc="o.importe"/></td>
 							    </tr>
 							    <tr>
-							      <td style="align:right;">I.V.A.</td>
-							      <td style="align:right;"><t t-esc="o.impuestos"/></td>
+							      <td class="align-right">I.V.A.</td>
+							      <td class="align-right"><t t-esc="o.impuestos"/></td>
 							    </tr>
 							    <tr>
-							      <td style="align:right;">Total</td>
-							      <td style="align:right;"><t t-esc="o.total"/></td>
+							      <td class="align-right">Total</td>
+							      <td class="align-right"><t t-esc="o.total"/></td>
 							    </tr>
 							   </tbody>
 							</table>
