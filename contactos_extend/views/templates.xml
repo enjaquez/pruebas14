@@ -30,7 +30,9 @@
 							    </tr>
 							    <tr>
 							      <td>Cargos de Insumos</td>
-							      <td class="text-right"><t t-esc="o.importe_insum"/></td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe_insum)"/>
+							      </td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Laboratorio</td>
@@ -42,7 +44,9 @@
 							    </tr>
 							    <tr>
 							      <td>Cargos de Servicios</td>
-							      <td class="text-right"><t t-esc="o.importe_servi"/></td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe_servi)"/>
+							      </td>
 							    </tr>
 							    <tr>
 							      <td>Otros</td>
@@ -50,15 +54,21 @@
 							    </tr>
 							    <tr>
 							      <td class="text-right">Sub-Total</td>
-							      <td class="text-right"><t t-esc="o.importe"/></td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe)"/>
+							      </td>
 							    </tr>
 							    <tr>
 							      <td class="text-right">I.V.A.</td>
-							      <td class="text-right"><t t-esc="o.impuestos"/></td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.impuestos)"/>
+							      </td>
 							    </tr>
 							    <tr>
 							      <td class="text-right">Total</td>
-							      <td class="text-right"><t t-esc="o.total"/></td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.total)"/>
+							      </td>
 							    </tr>
 							   </tbody>
 							</table>
