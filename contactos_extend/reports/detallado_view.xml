@@ -18,10 +18,10 @@
 					  <tbody>
 					  		<t t-set="x" t-value="0"/>
 							<t t-foreach="docs" t-as="o">
-								<t t-if="x == 0">
-									<p>
+								<t t-if="x==0">
+									<h2>
 										<t t-esc="o.order_partner_id"/>
-									</p>
+									</h2>
 									<t t-set="x" t-value="1"/>
 								</t>
 								    <tr>
