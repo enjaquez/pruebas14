@@ -77,5 +77,88 @@
 				</t>
 			</t>
 		</template>
+
+
+
+		<template id="report_detallado_card">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="web.external_layout">
+						<div class="page">
+							<p>Paciente:
+								<span t-field="o.name"/>
+							</p>
+							<p>Fecha de ingreso:
+								<span t-field="o.fecha_ingreso" t-options='{"format": "dd/MM/yyyy"}' />
+							</p>
+							<p>Médico:
+								<span t-field="o.medico"/>
+							</p>
+							<table class="table" width="100%">
+							  <thead class="thead-dark">
+							    <tr>
+							      <th scope="col">Concepto</th>
+							      <th scope="col">Importe</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>Cargos de Medicamentos</td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe_medic)"/>
+							      </td>
+							    </tr>
+							    <tr>
+							      <td>Cargos de Insumos</td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe_insum)"/>
+							      </td>
+							    </tr>
+							    <tr>
+							      <td>Cargos de Laboratorio</td>
+							      <td class="text-right">0.00</td>
+							    </tr>
+							    <tr>
+							      <td>Cargos de Rayos-X</td>
+							      <td class="text-right">0.00</td>
+							    </tr>
+							    <tr>
+							      <td>Cargos de Servicios</td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe_servi)"/>
+							      </td>
+							    </tr>
+							    <tr>
+							      <td>Otros</td>
+							      <td class="text-right">0.00</td>
+							    </tr>
+							    <tr>
+							      <td class="text-right">Sub-Total</td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe)"/>
+							      </td>
+							    </tr>
+							    <tr>
+							      <td class="text-right">I.V.A.</td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.impuestos)"/>
+							      </td>
+							    </tr>
+							    <tr>
+							      <td class="text-right">Total</td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.total)"/>
+							      </td>
+							    </tr>
+							   </tbody>
+							</table>
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+
+
+
 	</data>
 </odoo>
