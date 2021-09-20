@@ -3,7 +3,7 @@
 		<report
 			string="Reporte Simple"
 			id="contactos_extend_simple_report"
-			model="sale.order.line"
+			model="res.partner"
 			report_type="qweb-pdf"
 			name="contactos_extend.report_simple_card"
 			file="contactos_extend.report_simple_card"
