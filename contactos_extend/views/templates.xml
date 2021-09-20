@@ -24,27 +24,29 @@
 							  <tbody>
 							    <tr>
 							      <td>Cargos de Medicamentos</td>
-							      <td><t t-esc="o.importe_medic"/></td>
+							      <td class="text-right">
+							      	<t t-esc="'{0:,.2f}'.format(o.importe_medic)"/>
+							      </td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Insumos</td>
-							      <td><t t-esc="o.importe_insum"/></td>
+							      <td class="text-right"><t t-esc="o.importe_insum"/></td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Laboratorio</td>
-							      <td>0.00</td>
+							      <td class="text-right">0.00</td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Rayos-X</td>
-							      <td>0.00</td>
+							      <td class="text-right">0.00</td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Servicios</td>
-							      <td><t t-esc="o.importe_servi"/></td>
+							      <td class="text-right"><t t-esc="o.importe_servi"/></td>
 							    </tr>
 							    <tr>
 							      <td>Otros</td>
-							      <td>0.00</td>
+							      <td class="text-right">0.00</td>
 							    </tr>
 							    <tr>
 							      <td class="text-right">Sub-Total</td>
