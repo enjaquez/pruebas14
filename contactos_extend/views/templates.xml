@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
 		<template id="report_simple_card">
@@ -77,52 +78,5 @@
 				</t>
 			</t>
 		</template>
-
-
-
-		<template id="report_detallado_card">
-			<t t-call="web.html_container">
-
-			<table class="table" width="100%">
-			  <thead class="thead-dark">
-			    <tr>
-			      <th scope="col">Cantidad</th>
-			      <th scope="col">Descripción</th>
-			      <th scope="col">Precio</th>
-			      <th scope="col">Importe</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-
-				<t t-foreach="docs" t-as="o">
-					<t t-call="web.external_layout">
-
-					    <tr>
-					      <td class="text-center">
-					      	<t t-esc="o.product_uom_qty"/>
-					      </td>
-					      <td class="text-center">
-					      	<t t-esc="o.name"/>
-					      </td>
-					      <td class="text-center">
-					      	<t t-esc="o.price_unit"/>
-					      </td>
-					      <td class="text-center">
-					      	<t t-esc="o.price_total"/>
-					      </td>
-					    </tr>
-					</t>
-				</t>
-
-
-					   </tbody>
-					</table>
-
-
-			</t>
-		</template>
-
-
-
 	</data>
 </odoo>

@@ -1,14 +1,12 @@
 <odoo>
 	<data>
-		<report
-			string="Reporte Detallado"
-			id="contactos_extend_detallado_report"
-			model="sale.order.line"
-			report_type="qweb-pdf"
-			name="contactos_extend.report_detallado_card"
-			file="contactos_extend.report_detallado_card"
-			attachment_use="True"
-		/>
-
+		<record id="contactos_extend_detallado_report" model="ir.actions.report">
+			<field name="name">Reporte Detallado</field>
+			<field name="model">sale.order.line</field>
+			<field name="report_type">qweb-pdf</field>
+			<field name="report_name">contactos_extend.report_detallado_card</field>
+			<field name="report_file">contactos_extend.report_detallado_card</field>
+			<field name="binding_type">report</field>
+		<record/>
 	</data>
 </odoo>

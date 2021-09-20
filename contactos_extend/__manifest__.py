@@ -28,6 +28,7 @@
         'views/templates.xml',
         'reports/simple.xml',
         'reports/detallado.xml'
+        'reports/detallado_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
