@@ -3,12 +3,12 @@
 		<report
 			string="Reporte Simple"
 			id="contactos_extend_simple_report"
-			model="res.partner"
+			model="sale.order.line"
 			report_type="qweb-pdf"
 			name="contactos_extend.report_simple_card"
 			file="contactos_extend.report_simple_card"
 			attachment_use="True"
 		/>
-		
+
 	</data>
 </odoo>

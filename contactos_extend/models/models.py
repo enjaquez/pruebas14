@@ -136,9 +136,9 @@ class SimpleReport(models.AbstractModel):
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('contactos_extend.report_simple_card')
         return {
-            'doc_ids' : docids,
+            'doc_ids'   : docids,
             'doc_model' : self.env['sale.order.line']
-            'docs' : self.env['sale.order.line'].browse(docids)
+            'docs'      : self.env['sale.order.line'].browse(docids)
         }
 
 
