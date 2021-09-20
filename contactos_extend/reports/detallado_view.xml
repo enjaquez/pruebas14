@@ -17,10 +17,11 @@
 					  </thead>
 					  <tbody>
 					  		<t t-set="x" t-value="0"/>
+					  		<t t-set="suma" t-value="0"/>
 							<t t-foreach="docs" t-as="o">
 								<t t-if="x==0">
 									<h2>
-										<t t-esc="o.order_partner_id"/>
+										<t t-esc="o.order_partner_id.name"/>
 									</h2>
 									<t t-set="x" t-value="1"/>
 								</t>
@@ -36,12 +37,16 @@
 								      </td>
 								      <td class="text-center">
 								      	<t t-esc="o.price_total"/>
+								      	<t t-set="suma" t-value="suma + o.price_total"/>
 								      </td>
 								    </tr>
 								
 							</t>
 						</tbody>
 					</table>
+					<h2>
+						Total : <t t-esc="'{0:,.2f}'.format(suma)"/>
+					</h2>
 				</t>
 			</t>
 		</template>
