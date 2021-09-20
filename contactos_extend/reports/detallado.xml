@@ -6,7 +6,7 @@
 			<field name="report_type">qweb-pdf</field>
 			<field name="report_name">contactos_extend.report_detallado_card</field>
 			<field name="report_file">contactos_extend.report_detallado_card</field>
-			<field name="binding_model_id" ref="sale_order.model_sale_order_line"/>
+<!--			<field name="binding_model_id" ref="sale_order.model_sale_order_line"/> -->
 			<field name="binding_type">report</field>
 		</record>
 	</data>
