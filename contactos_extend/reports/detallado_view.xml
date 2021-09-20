@@ -4,6 +4,12 @@
 		<template id="report_detallado_card">
 			<t t-call="web.html_container">
 				<t t-call="web.external_layout">
+
+					<t t-set="l" t-value="l.with_context(lang=lang)"/>
+					<p>
+						<t t-esc="l.name"/>
+					</p>
+
 					<table class="table" width="100%">
 					  <thead class="thead-dark">
 					    <tr>
@@ -15,8 +21,6 @@
 					  </thead>
 					  <tbody>
 							<t t-foreach="docs" t-as="o">
-								
-
 								    <tr>
 								      <td class="text-center">
 								      	<t t-esc="o.product_uom_qty"/>
