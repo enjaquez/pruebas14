@@ -13,7 +13,7 @@
 								<span t-field="o.fecha_ingreso" t-options='{"format": "dd/MM/yyyy"}' />
 							</p>
 							<p>Médico:
-								<span t-field="o.fecha_ingreso"/>
+								<span t-field="o.medico"/>
 							</p>
 						</div>
 					</t>
