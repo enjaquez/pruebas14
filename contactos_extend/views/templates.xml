@@ -15,7 +15,7 @@
 							<p>Médico:
 								<span t-field="o.medico"/>
 							</p>
-							<table width="100%">
+							<table class="table" width="100%">
 							  <thead class="thead-dark">
 							    <tr>
 							      <th scope="col">Concepto</th>
