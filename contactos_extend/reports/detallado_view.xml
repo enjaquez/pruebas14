@@ -44,9 +44,9 @@
 							</t>
 						</tbody>
 					</table>
-					<h2>
+					<h4 class="text-cente">
 						Total : <t t-esc="'{0:,.2f}'.format(suma)"/>
-					</h2>
+					</h4>
 				</t>
 			</t>
 		</template>
