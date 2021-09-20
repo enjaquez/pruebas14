@@ -16,10 +16,14 @@
 					    </tr>
 					  </thead>
 					  <tbody>
+					  		<t t-set="x" t-value="0"/>
 							<t t-foreach="docs" t-as="o">
-							<p>
-								<t t-esc="o.order_partner_id"/>
-							</p>
+								<t t-if="x == 0">
+									<p>
+										<t t-esc="o.order_partner_id"/>
+									</p>
+									<t t-set="x" t-value="1"/>
+								</t>
 								    <tr>
 								      <td class="text-center">
 								      	<t t-esc="o.product_uom_qty"/>
