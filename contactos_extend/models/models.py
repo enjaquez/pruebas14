@@ -137,7 +137,7 @@ class SimpleReport(models.AbstractModel):
         report = report_obj._get_report_from_name('contactos_extend.report_simple_card')
         return {
             'doc_ids'   : docids,
-            'doc_model' : self.env['sale.order.line']
+            'doc_model' : self.env['sale.order.line'],
             'docs'      : self.env['sale.order.line'].browse(docids)
         }
 
