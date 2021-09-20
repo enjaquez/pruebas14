@@ -5,7 +5,6 @@
 				<t t-foreach="docs" t-as="o">
 					<t t-call="web.external_layout">
 						<div class="page">
-							<h2>Recibo simple</h2>
 							<p>Paciente:
 								<span t-field="o.name"/>
 							</p>
@@ -25,11 +24,11 @@
 							  <tbody>
 							    <tr>
 							      <td>Cargos de Medicamentos</td>
-							      <td>0.00</td>
+							      <td><t t-field="o.importe_medic"/></td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Insumos</td>
-							      <td>0.00</td>
+							      <td><t t-field="o.importe_insum"/></td>
 							    </tr>
 							    <tr>
 							      <td>Cargos de Laboratorio</td>
@@ -41,11 +40,23 @@
 							    </tr>
 							    <tr>
 							      <td>Cargos de Servicios</td>
-							      <td>0.00</td>
+							      <td><t t-field="o.importe_servi"/></td>
 							    </tr>
 							    <tr>
 							      <td>Otros</td>
 							      <td>0.00</td>
+							    </tr>
+							    <tr>
+							      <td style="align:right;">Sub-Total</td>
+							      <td style="align:right;"><t t-field="o.importe_importe"/></td>
+							    </tr>
+							    <tr>
+							      <td style="align:right;">I.V.A.</td>
+							      <td style="align:right;"><t t-field="o.importe_impuestos"/></td>
+							    </tr>
+							    <tr>
+							      <td style="align:right;">Total</td>
+							      <td style="align:right;"><t t-field="o.importe_total"/></td>
 							    </tr>
 							   </tbody>
 							</table>
