@@ -7,13 +7,13 @@
 						<div class="page">
 							<h2>Recibo simple</h2>
 							<p>Paciente:
-								<span t-field="o.order_partner_id.name"/>
+								<span t-field="o.name"/>
 							</p>
 							<p>Fecha de ingreso:
-								<span t-field="o.order_partner_id.fecha_ingreso" t-options='{"format": "dd/MM/yyyy"}' />
+								<span t-field="o.fecha_ingreso" t-options='{"format": "dd/MM/yyyy"}' />
 							</p>
 							<p>Médico:
-								<span t-field="o.order_partner_id.fecha_ingreso"/>
+								<span t-field="o.fecha_ingreso"/>
 							</p>
 						</div>
 					</t>
