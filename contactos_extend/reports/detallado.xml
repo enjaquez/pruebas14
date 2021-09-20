@@ -7,6 +7,6 @@
 			<field name="report_name">contactos_extend.report_detallado_card</field>
 			<field name="report_file">contactos_extend.report_detallado_card</field>
 			<field name="binding_type">report</field>
-		<record/>
+		</record>
 	</data>
 </odoo>
