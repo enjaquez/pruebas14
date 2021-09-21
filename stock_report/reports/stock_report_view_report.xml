@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="stock_report_detallado_card">
+			<t t-call="web.html_container">
+				<t t-call="web.external_layout">
+					<table class="table" width="100%">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Propietario</th>
+					      <th scope="col">Producto</th>
+					      <th scope="col">Ubicación</th>
+					      <th scope="col">Unidad de Medida</th>
+					      <th scope="col">Existencia</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+							<t t-foreach="docs" t-as="o">
+							    <tr>
+							      <td class="text-center">
+							      	<t t-esc="o.owner_id.name"/>
+							      </td>
+							      <td class="text-center">
+							      	<t t-esc="o.product_id.name"/>
+							      </td>
+							      <td class="text-center">
+							      	<t t-esc="o.location_id.name"/>
+							      </td>
+							      <td class="text-center">
+							      	<t t-esc="o.product_uom_id.name"/>
+							      </td>
+							      <td class="text-center">
+							      	<t t-esc="o.on_hand"/>
+							      </td>
+							    </tr>
+							</t>
+						</tbody>
+					</table>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>
