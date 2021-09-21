@@ -24,7 +24,7 @@
 							      	<t t-esc="o.product_id.name"/>
 							      </td>
 							      <td class="text-center">
-							      	<t t-esc="o.location_id.name"/>
+							      	<t t-esc="o.location_id"/>
 							      </td>
 							      <td class="text-center">
 							      	<t t-esc="o.product_uom_id.name"/>
