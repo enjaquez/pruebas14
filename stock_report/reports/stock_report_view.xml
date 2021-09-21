@@ -18,7 +18,7 @@
 							<t t-foreach="docs" t-as="o">
 							    <tr>
 							      <td class="text-center">
-							      	<t t-esc="o.owner_id.name"/>
+							      	<t t-esc="o.owner_id"/>
 							      </td>
 							      <td class="text-center">
 							      	<t t-esc="o.product_id.name"/>
