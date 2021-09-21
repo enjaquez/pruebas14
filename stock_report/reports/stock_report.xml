@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="stock_report_view_report" model="ir.actions.report">
+			<field name="name">Reporte de Stock</field>
+			<field name="model">stock.quant</field>
+			<field name="report_type">qweb-pdf</field>
+			<field name="report_name">stock_report.stock_report_detallado</field>
+			<field name="report_file">stock_report.stock_report_detallado</field>
+<!--			<field name="binding_model_id" ref="sale_order.model_sale_order_line"/> -->
+			<field name="binding_type">report</field>
+		</record>
+	</data>
+</odoo>
